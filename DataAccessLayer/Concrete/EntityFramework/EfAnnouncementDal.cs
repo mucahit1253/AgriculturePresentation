@@ -13,5 +13,24 @@ namespace DataAccessLayer.Concrete.EntityFramework
         public EfAnnouncementDal(AgricultureContext context) : base(context)
         {
         }
+
+        public void AnnouncementStatusToFalse(int id)
+        {
+            var announcement = _context.Announcements.Find(id);
+          
+                announcement.Status = false; 
+                _context.SaveChanges();
+            
+        }
+
+        public void AnnouncementStatusToTrue(int id)
+        {
+            var announcement = _context.Announcements.Find(id);
+            
+                announcement.Status = true;
+                _context.SaveChanges();
+            
+
+        }
     }
 }

@@ -8,7 +8,7 @@ namespace DataAccessLayer.Concrete.Repository
 {
     public class GenericRepository<T> : IGenericDal<T> where T : class, new()
     {
-        private readonly AgricultureContext _context;
+        protected readonly AgricultureContext _context;
 
         public GenericRepository(AgricultureContext context)
         {
