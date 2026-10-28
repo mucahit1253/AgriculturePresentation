@@ -1,0 +1,35 @@
+﻿@model Image
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Göresel Güncelleme Sayfası</h4>
+
+            <form asp-area="Admin" asp-controller="Image" asp-action="UpdateImage" class="forms-sample">
+                <input asp-for="ImageId" type="hidden" />
+                <div class="form-group">
+                    <label asp-for="Title">Görev</label>
+                    <input asp-for="Title" type="text" class="form-control" placeholder="Görev">
+                    <span asp-validation-for="Title" class="text-danger"></span>
+
+                </div>
+                <div class="form-group">
+                    <label asp-for="ImageUrl">Görsel Yolu</label>
+                    <input asp-for="ImageUrl" type="text" class="form-control" placeholder="Görsel Url">
+                    <span asp-validation-for="ImageUrl" class="text-danger"></span>
+
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Description">Açıklama</label>
+                    <textarea asp-for="Description" rows="5" class="form-control" placeholder="Açıklama Giriniz"> </textarea>
+                    <span asp-validation-for="Description" class="text-danger"></span>
+
+                </div>
+
+
+                <button type="submit" class="btn btn-outline-info">Kaydet</button>
+                <button asp-controller="Image" asp-action="Index" class="btn btn-outline-secondary">İptal</button>
+            </form>
+        </div>
+    </div>
+</div>

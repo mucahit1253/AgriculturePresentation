@@ -22,6 +22,7 @@ builder.Services.AddScoped<IAnnouncementService, AnnouncementManager>();
 builder.Services.AddScoped<IAnnouncementDal, EfAnnouncementDal>();
 builder.Services.AddScoped<IImageService, ImageManager>();
 builder.Services.AddScoped<IImageDal, EfImageDal>();
+builder.Services.AddScoped<ImageValidator>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
