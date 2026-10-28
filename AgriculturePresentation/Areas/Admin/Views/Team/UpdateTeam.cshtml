@@ -1,0 +1,56 @@
+﻿@model Team
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Personel Güncellem Sayfası</h4>
+
+            <form asp-area="Admin" asp-controller="Team" asp-action="UpdateTeam" class="forms-sample">
+                <input asp-for="TeamId" type="hidden" />
+                <div class="form-group">
+                    <label asp-for="PersonName">Ad Soyadı</label>
+                    <input asp-for="PersonName" type="text" class="form-control" placeholder="Ad Soyad">
+                    <span asp-validation-for="PersonName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Title">Görev</label>
+                    <input asp-for="Title" type="text" class="form-control" placeholder="Görev">
+                    <span asp-validation-for="Title" class="text-danger"></span>
+
+                </div>
+                <div class="form-group">
+                    <label asp-for="ImageUrl">Görsel Yolu</label>
+                    <input asp-for="ImageUrl" type="text" class="form-control" placeholder="Görsel Url">
+                    <span asp-validation-for="ImageUrl" class="text-danger"></span>
+
+                </div>
+                <div class="form-group">
+                    <label asp-for="FacebookUrl">Facebook</label>
+                    <input asp-for="FacebookUrl" type="text" class="form-control" placeholder="FacebookUrl">
+                   
+                </div>
+                <div class="form-group">
+                    <label asp-for="InstagramUrl">Instagtam</label>
+                    <input asp-for="InstagramUrl" type="text" class="form-control" placeholder="InstagramUrl">
+                    
+
+                </div>
+                <div class="form-group">
+                    <label asp-for="TwitterUrl">Twitter</label>
+                    <input asp-for="TwitterUrl" type="text" class="form-control" placeholder="TwitterUrl">
+                   
+
+                </div>
+                <div class="form-group">
+                    <label asp-for="WebSiteUrl">Web Site</label>
+                    <input asp-for="WebSiteUrl" type="text" class="form-control" placeholder="WebSiteUrl">
+                   
+
+                </div>
+
+                
+                <button type="submit" class="btn btn-outline-info">Kaydet</button>
+                <button asp-controller="Team" asp-action="Index" class="btn btn-outline-secondary">İptal</button>
+            </form>
+        </div>
+    </div>
+</div>
