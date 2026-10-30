@@ -23,6 +23,13 @@ builder.Services.AddScoped<IAnnouncementDal, EfAnnouncementDal>();
 builder.Services.AddScoped<IImageService, ImageManager>();
 builder.Services.AddScoped<IImageDal, EfImageDal>();
 builder.Services.AddScoped<ImageValidator>();
+builder.Services.AddScoped<IAddressService, AddressManager>();
+builder.Services.AddScoped<IAddressDal, EfAddressDal>();
+builder.Services.AddScoped<AddressValidator>();
+builder.Services.AddScoped<IContactService,ContactManager>();
+builder.Services.AddScoped<IContactDal,EfContactDal>();
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

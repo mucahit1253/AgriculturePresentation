@@ -1,0 +1,46 @@
+﻿@model Address
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Adres Güncelleme Sayfası</h4>
+
+            <form asp-area="Admin" asp-controller="Address" asp-action="UpdateAddress" class="forms-sample">
+                <input asp-for="AddressId" type="hidden" />
+                <div class="form-group">
+                    <label asp-for="Description1">Açıklama 1</label>
+                    <input asp-for="Description1" type="text" class="form-control" placeholder="Açıklama 1">
+                    <span asp-validation-for="Description1" class="text-danger"></span>
+
+                </div>
+                <div class="form-group">
+                    <label asp-for="Description2">Açıklama 2</label>
+                    <input asp-for="Description2" type="text" class="form-control" placeholder="Açıklama 2">
+                    <span asp-validation-for="Description2" class="text-danger"></span>
+
+                </div>
+                <div class="form-group">
+                    <label asp-for="Description3">Açıklama 3</label>
+                    <input asp-for="Description3" type="text" class="form-control" placeholder="Açıklama 3">
+                    <span asp-validation-for="Description3" class="text-danger"></span>
+
+                </div>
+                <div class="form-group">
+                    <label asp-for="Description4">Açıklama 4</label>
+                    <input asp-for="Description4" type="text" class="form-control" placeholder="Açıklama 4">
+                    <span asp-validation-for="Description4" class="text-danger"></span>
+
+                </div>
+                <div class="form-group">
+                    <label asp-for="Mapinfo">Harita Konumu</label>
+                    <input asp-for="Mapinfo" type="text" class="form-control" placeholder="Harita Bilgisi">
+                    <span asp-validation-for="Mapinfo" class="text-danger"></span>
+
+                </div>
+
+
+                <button type="submit" class="btn btn-outline-info">Kaydet</button>
+                <button asp-controller="Address" asp-action="Index" class="btn btn-outline-secondary">İptal</button>
+            </form>
+        </div>
+    </div>
+</div>
