@@ -3,6 +3,7 @@ using DataAccessLayer.Abstract;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace BusinessLayer.Concrete
@@ -24,6 +25,11 @@ namespace BusinessLayer.Concrete
         public Contact GetById(int id)
         {
             return _contactDal.GetById(id);
+        }
+
+        public List<Contact> GetDefaults(Expression<Func<Contact, bool>> filter = null)
+        {
+            throw new NotImplementedException();
         }
 
         public List<Contact> GetListAll()

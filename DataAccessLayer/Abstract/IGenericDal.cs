@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace DataAccessLayer.Abstract
@@ -11,6 +12,7 @@ namespace DataAccessLayer.Abstract
         void Update(T t);
         T GetById(int id);
         List<T> GetListAll();
+        List<T> GetDefaults(Expression<Func<T, bool>> filter = null);
 
     }
 }

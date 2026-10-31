@@ -1,0 +1,61 @@
+﻿@model List<Announcement>
+
+<div class="blog" id="blog">
+    <div class="container">
+        <h3 class="tittle">Son Duyurular</h3>
+        <p class="heading-btm-w3ls">Çiftliklerimiz ve tarlalarımızda son haberler.</p>
+
+        @{
+            int i = 0;
+        }
+
+        @foreach (var item in Model)
+        {
+            i++;
+            var modalId = "myModal" + i;
+            var isEven = i % 2 == 0;
+
+            <div class="blog-grid-w3-agileits">
+                @if (!isEven)
+                {
+                    <div class="col-md-7 blog-img1-agileits-w3layouts">
+                        <a href="#" data-toggle="modal" data-target="#@modalId"></a>
+                    </div>
+                }
+
+                <div class="col-md-5 blog-info-w3layouts @(isEven ? "blog-mid" : "")">
+                    <h6>
+                        <a href="#" data-toggle="modal" data-target="#@modalId">@item.Title</a>
+                    </h6>
+                    <div class="@(isEven ? "inner-info-mid" : "inner-info")">
+                        <a href="#" class="blog-text-w3ls @(isEven ? "mid-bar" : "bar")">Lorem ipsum.</a>
+                        <span>@item.Date.ToString("dd/MM/yyyy")</span>
+                        <p class="para-w3-agileits">@item.Description</p>
+                    </div>
+                    <a href="#" class="blog-more-agile" data-toggle="modal" data-target="#@modalId">Read More</a>
+                </div>
+
+                @if (isEven)
+                {
+                    <div class="col-md-7 blog-img2-agileits-w3layouts">
+                        <a href="#" data-toggle="modal" data-target="#@modalId"></a>
+                    </div>
+                }
+                <div class="clearfix"></div>
+            </div>
+
+            <div class="modal fade" id="@modalId" tabindex="-1" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4>Duyuru</h4>
+                            <h5>@item.Title</h5>
+                            <p>@item.Description</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

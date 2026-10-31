@@ -3,6 +3,7 @@ using DataAccessLayer.Abstract;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace BusinessLayer.Concrete
@@ -24,6 +25,11 @@ namespace BusinessLayer.Concrete
         public Image GetById(int id)
         {
             return _ımageDal.GetById(id);
+        }
+
+        public List<Image> GetDefaults(Expression<Func<Image, bool>> filter = null)
+        {
+            throw new NotImplementedException();
         }
 
         public List<Image> GetListAll()

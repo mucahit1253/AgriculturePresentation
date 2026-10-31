@@ -2,6 +2,7 @@
 using DataAccessLayer.Contexts;
 using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace DataAccessLayer.Concrete.Repository
@@ -24,6 +25,14 @@ namespace DataAccessLayer.Concrete.Repository
         public T GetById(int id)
         {
             return _context.Set<T>().Find(id);
+        }
+
+        public List<T> GetDefaults(Expression<Func<T, bool>> filter = null)
+        {
+            return filter == null
+                ? _context.Set<T>().ToList()
+                : _context.Set<T>().Where(filter).ToList();
+                
         }
 
         public List<T> GetListAll()

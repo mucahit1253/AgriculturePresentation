@@ -3,6 +3,7 @@ using DataAccessLayer.Abstract;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace BusinessLayer.Concrete
@@ -33,6 +34,12 @@ namespace BusinessLayer.Concrete
         public Announcement GetById(int id)
         {
            return _announcement.GetById(id);
+        }
+
+        public List<Announcement> GetDefaults(Expression<Func<Announcement, bool>> filter = null)
+        {
+
+            return _announcement.GetDefaults(p => p.Status == true);
         }
 
         public List<Announcement> GetListAll()

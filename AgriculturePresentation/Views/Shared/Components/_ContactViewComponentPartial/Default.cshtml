@@ -1,0 +1,18 @@
+﻿@model Contact
+<div class="col-md-9 contact-middle">
+	<h2>Bize Yazın</h2>
+	<form asp-controller="Default" asp-action="SendMessage" method="post">
+		<div class="form-agileinfo">
+			<p>Adınız Soyadınız</p>
+			<input type="text" asp-for="Name" placeholder="Ad Soyad" required="" />
+			<p>Email Adresiniz</p>
+			<input type="email" asp-for="Mail" placeholder="Email" required="" />
+		</div>
+		<div class="form-agileits-w3layouts">
+			<p>Mesajınız</p>
+			<textarea asp-for="Message" placeholder="Mesaj" required=""></textarea>
+			<input type="submit" value="MESAJI GÖNDER">
+		</div>
+		<div class="clearfix"></div>
+	</form>
+</div>

@@ -4,6 +4,7 @@ using DataAccessLayer.Concrete.EntityFramework;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace BusinessLayer.Concrete
@@ -25,6 +26,11 @@ namespace BusinessLayer.Concrete
         public SocialMedia GetById(int id)
         {
            return _socialMediaDal.GetById(id);
+        }
+
+        public List<SocialMedia> GetDefaults(Expression<Func<SocialMedia, bool>> filter = null)
+        {
+            throw new NotImplementedException();
         }
 
         public List<SocialMedia> GetListAll()
