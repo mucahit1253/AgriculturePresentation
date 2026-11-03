@@ -8,7 +8,7 @@
         <div class="card-body">
             <h4 class="card-title">Yeni Hizmet Kaydı</h4>
        
-            <form asp-area="Admin" asp-controller="Service" asp-action="AddService" class="forms-sample">
+            <form asp-area="Admin" asp-controller="Service" asp-action="AddService" method="post" class="forms-sample">
                 <div class="form-group">
                     <label asp-for="Title" >Başlık</label>
                     <input asp-for="Title" type="text" class="form-control"  placeholder="Başlık">

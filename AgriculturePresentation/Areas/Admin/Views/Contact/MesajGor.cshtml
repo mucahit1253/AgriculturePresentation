@@ -1,0 +1,32 @@
+﻿@model Contact
+
+@{
+    ViewData["Title"] = "Mesajı Gör";
+}
+
+<div class="row">
+    <div class="col-md-8 grid-margin stretch-card mx-auto">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Mesaj Detayı</h4>
+
+                <dl class="row">
+                    <dt class="col-sm-3">Gönderen</dt>
+                    <dd class="col-sm-9">@Model.Name</dd>
+
+                    <dt class="col-sm-3">E-posta</dt>
+                    <dd class="col-sm-9">@Model.Mail</dd>
+
+
+                    <dt class="col-sm-3">Tarih</dt>
+                    <dd class="col-sm-9">@Model.Date.ToString("dd.MM.yyyy HH:mm")</dd>
+
+                    <dt class="col-sm-3">Mesaj</dt>
+                    <dd class="col-sm-9">@Model.Message</dd>
+                </dl>
+
+                <a asp-controller="Dashboard" asp-action="Index" class="btn btn-outline-secondary btn-sm">Geri Dön</a>
+            </div>
+        </div>
+    </div>
+</div>

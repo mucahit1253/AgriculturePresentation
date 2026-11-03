@@ -2,13 +2,13 @@
     <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
             <li class="nav-item">
-                <a class="nav-link" href="../../index.html">
+                <a class="nav-link"  asp-controller="Dashboard" asp-action="Index">
                     <i class="mdi mdi-home menu-icon"></i>
                     <span class="menu-title">Dashboard</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link"  href="#">
+                <a class="nav-link" asp-controller="Service" asp-action="Index">
                     <i class="mdi mdi-circle-outline menu-icon"></i>
                     <span class="menu-title">Hizmetlerimiz</span>
                   
@@ -16,13 +16,13 @@
                 
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="../../pages/forms/basic_elements.html">
+                <a class="nav-link" asp-area="Admin" asp-controller="Team" asp-action="Index">
                     <i class="mdi mdi-view-headline menu-icon"></i>
                     <span class="menu-title">Takım Arkadaşlarımız</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="../../pages/charts/chartjs.html">
+                <a class="nav-link" asp-area="Admin" asp-controller="Chart" asp-action="Index" >
                     <i class="mdi mdi-chart-pie menu-icon"></i>
                     <span class="menu-title">Grafikler</span>
                 </a>
@@ -34,38 +34,50 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="../../pages/icons/mdi.html">
-                    <i class="mdi mdi-emoticon menu-icon"></i>
+            <a class="nav-link" asp-area="Admin" asp-controller="Announcement" asp-action="Index">
+                    <i class="mdi mdi-format-annotation-minus menu-icon"></i>
                     <span class="menu-title">Duyurular</span>
                 </a>
             </li>
         <li class="nav-item">
-            <a class="nav-link" href="../../pages/icons/mdi.html">
-                <i class="mdi mdi-emoticon menu-icon"></i>
+            <a class="nav-link" asp-area="Admin" asp-controller="Contact" asp-action="Index">
+                <i class="mdi mdi-message menu-icon"></i>
                 <span class="menu-title">Gelen Meşajlar</span>
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="../../pages/icons/mdi.html">
-                <i class="mdi mdi-emoticon menu-icon"></i>
+            <a class="nav-link" asp-area="Admin" asp-controller="Address" asp-action="Index">
+                <i class="mdi mdi-map menu-icon"></i>
                 <span class="menu-title">Adres Bilgileri</span>
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="../../pages/icons/mdi.html">
-                <i class="mdi mdi-emoticon menu-icon"></i>
+            <a class="nav-link" asp-area="Admin" asp-controller="Image" asp-action="Index">
+                <i class="mdi mdi-image menu-icon"></i>
                 <span class="menu-title">Görseller</span>
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="../../pages/icons/mdi.html">
-                <i class="mdi mdi-emoticon menu-icon"></i>
+            <a class="nav-link" asp-area="Admin" asp-controller="Report" asp-action="Index">
+                <i class="mdi mdi-file-document menu-icon"></i>
+                <span class="menu-title">Raporlar</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" asp-area="Admin" asp-controller="Chart" asp-action="Index">
+                <i class="mdi mdi-key menu-icon"></i>
                 <span class="menu-title">Ayarlar</span>
             </a>
         </li>
-            <li class="nav-item">
-                <a class="nav-link" href="../../documentation/documentation.html">
-                    <i class="mdi mdi-file-document-box-outline menu-icon"></i>
+        <li class="nav-item">
+             <a class="nav-link" asp-area="Admin" asp-controller="Admin" asp-action="Index">
+                <i class="mdi mdi-emoticon menu-icon"></i>
+                <span class="menu-title">Admin İşlemleri</span>
+            </a>
+        </li>
+        <li class="nav-item">
+                <a class="nav-link" asp-area="Admin" asp-controller="Chart" asp-action="Index">
+                    <i class="mdi mdi-exit-run menu-icon"></i>
                     <span class="menu-title">Çıkış Yap</span>
                 </a>
             </li>

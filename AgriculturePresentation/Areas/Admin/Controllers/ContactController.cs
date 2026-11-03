@@ -33,7 +33,14 @@ namespace AgriculturePresentation.Areas.Admin.Controllers
             var query =_contactService.GetById(id);
             return View(query);
         }
+        public IActionResult MesajGor(int id)
+        {
+            var message = _contactService.GetById(id);
+            if (message == null)
+                return NotFound();
 
+            return View(message);
+        }
 
 
     }

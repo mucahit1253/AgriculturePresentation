@@ -37,6 +37,12 @@ namespace BusinessLayer.Concrete
             return _contactDal.GetListAll();
         }
 
+        public int GetThisMonthMessageCount()
+        {
+            var now = DateTime.Now;
+            return _contactDal.GetDefaults(p => p.Date.Month == now.Month && p.Date.Year == now.Year).Count();
+        }
+
         public void Insert(Contact t)
         {
             _contactDal.Insert(t);

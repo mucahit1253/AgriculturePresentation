@@ -1,0 +1,27 @@
+﻿@model Admin
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Yeni Kullanıcı Kaydı Sayfası</h4>
+
+            <form asp-area="Admin" asp-controller="Admin" asp-action="AddAdmin" method="post" class="forms-sample">
+                <div class="form-group">
+                    <label asp-for="UserName">Kullanıcı Adı</label>
+                    <input asp-for="UserName" type="text" class="form-control" placeholder="Kullanıcı Adı">
+                    <span asp-validation-for="UserName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Password">Görsel</label>
+                    <input asp-for="Password" type="password" class="form-control" placeholder="Şifre Giriniz">
+                    <span asp-validation-for="Password" class="text-danger"></span>
+
+                </div>
+
+               
+                <button type="submit" class="btn btn-outline-info">Kaydet</button>
+                <button asp-controller="Admin" asp-action="Index" class="btn btn-outline-secondary">İptal</button>
+            </form>
+        </div>
+    </div>
+</div>

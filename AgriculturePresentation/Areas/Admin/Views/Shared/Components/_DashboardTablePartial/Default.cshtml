@@ -1,0 +1,55 @@
+﻿@model List<Contact>
+
+<div class="row">
+    <div class="col-md-12 stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <p class="card-title">Son Mesajlar</p>
+                <div class="table-responsive">
+                    <table id="recent-purchases-listing" class="table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Adı Soyadı</th>
+                                <th>Mail</th>  
+                                <th>Tarih</th>
+                                <th>Mesaj</th>
+                               
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.ContactId</td>
+                                    <td>@item.Name</td>
+                                    <td>@item.Mail</td>
+                                    <td>@item.Date</td>
+                                    <td><a asp-area="Admin" asp-controller="Contact" asp-action="MesajGor" asp-route-id="@item.ContactId" class="btn btn-mesaj-gor btn-sm rounded-pill px-3">Mesajı Gör</a></td>
+                                   
+                                </tr>
+                            }
+                          
+                           
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .btn-mesaj-gor {
+        border-color: #2b5797;
+        color: #2b5797;
+        font-weight: 500;
+        height: 38px;
+        display: inline-flex;
+        align-items: center;
+    }
+
+        .btn-mesaj-gor:hover {
+            background-color: #2b5797;
+            color: #fff;
+        }
+</style>
