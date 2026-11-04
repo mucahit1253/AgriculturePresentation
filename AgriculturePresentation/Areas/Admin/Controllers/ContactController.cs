@@ -1,11 +1,13 @@
 ﻿using BusinessLayer.Abstract;
 using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Model;
 
 namespace AgriculturePresentation.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize]
     public class ContactController : Controller
     {
         private readonly IContactService _contactService;

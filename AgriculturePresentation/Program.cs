@@ -4,6 +4,10 @@ using BusinessLayer.ValidationRules;
 using DataAccessLayer.Abstract;
 using DataAccessLayer.Concrete.EntityFramework;
 using DataAccessLayer.Contexts;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.EntityFrameworkCore;
 
 
@@ -14,28 +18,25 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<AgricultureContext>(options =>
 options.UseSqlServer(
     builder.Configuration.GetConnectionString("DefaultConnection")));
-builder.Services.AddScoped<IServiceService, ServiceManager>();
-builder.Services.AddScoped<IServiceDal, EfServiceDal>();
-builder.Services.AddScoped<ITeamService, TeamManager>();
-builder.Services.AddScoped<ITeamDal, EfTeamDal>();
-builder.Services.AddScoped<TeamValidator>();
-builder.Services.AddScoped<IAnnouncementService, AnnouncementManager>();
-builder.Services.AddScoped<IAnnouncementDal, EfAnnouncementDal>();
-builder.Services.AddScoped<IImageService, ImageManager>();
-builder.Services.AddScoped<IImageDal, EfImageDal>();
-builder.Services.AddScoped<ImageValidator>();
-builder.Services.AddScoped<IAddressService, AddressManager>();
-builder.Services.AddScoped<IAddressDal, EfAddressDal>();
-builder.Services.AddScoped<AddressValidator>();
-builder.Services.AddScoped<IContactService,ContactManager>();
-builder.Services.AddScoped<IContactDal,EfContactDal>();
-builder.Services.AddScoped<ISocialMediaService, SocialMediaManager>();
-builder.Services.AddScoped<ISocialMediaDal, EfSocialMediaDal>();
-builder.Services.AddScoped<IAboutService, AboutManager>();
-builder.Services.AddScoped<IAboutDal,EfAboutDal>();
-builder.Services.AddScoped<IAdminService, AdminManager>();
-builder.Services.AddScoped<IAdminDal, EfAdminDal>();
+// Identity servisleri
+builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+    .AddEntityFrameworkStores<AgricultureContext>()
+    .AddDefaultTokenProviders();
+builder.Services.ContainerDependencies();
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        options.LoginPath = "/Admin/Login/Index";
+        options.AccessDeniedPath = "/Admin/Login/AccessDenied";
+    });
+builder.Services.AddMvc(config =>
+{
+    var policy = new AuthorizationPolicyBuilder()
+    .RequireAuthenticatedUser()
+    .Build();
 
+    config.Filters.Add(new AuthorizeFilter(policy));
+});
 
 
 var app = builder.Build();
@@ -50,7 +51,7 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseRouting();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapStaticAssets();

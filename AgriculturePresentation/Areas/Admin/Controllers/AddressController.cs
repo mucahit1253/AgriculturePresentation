@@ -2,12 +2,14 @@
 using BusinessLayer.ValidationRules;
 using EntityLayer.Concrete;
 using FluentValidation.Results;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Model;
 
 namespace AgriculturePresentation.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize]
     public class AddressController : Controller
     {
         private readonly IAddressService _addressService;

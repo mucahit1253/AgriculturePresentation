@@ -2,11 +2,13 @@
 using BusinessLayer.ValidationRules;
 using EntityLayer.Concrete;
 using FluentValidation.Results;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AgriculturePresentation.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize]
     public class TeamController : Controller
     {
         private readonly ITeamService _teamService;

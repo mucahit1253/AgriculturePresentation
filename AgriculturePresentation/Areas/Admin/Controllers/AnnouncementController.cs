@@ -1,10 +1,12 @@
 ﻿using BusinessLayer.Abstract;
 using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AgriculturePresentation.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize]
     public class AnnouncementController : Controller
     {
         private readonly IAnnouncementService _annoumcementservice;

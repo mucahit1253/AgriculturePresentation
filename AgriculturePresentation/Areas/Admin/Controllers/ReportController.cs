@@ -2,12 +2,14 @@
 using BusinessLayer.Abstract;
 using ClosedXML.Excel;
 using DocumentFormat.OpenXml.ExtendedProperties;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using OfficeOpenXml;
 
 namespace AgriculturePresentation.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize]
     public class ReportController : Controller
     {
         private readonly IContactService _contactService;
