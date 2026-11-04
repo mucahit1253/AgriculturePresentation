@@ -16,6 +16,20 @@ Tarım temalı bir kurumsal tanıtım sitesi. ASP.NET Core MVC ile geliştirilmi
   - Dashboard ve raporlama (Excel export — ClosedXML / EPPlus)
   - Giriş ekranı (Identity ile kimlik doğrulama)
 
+## 📸 Ekran Görüntüleri
+
+**Anasayfa**
+![Anasayfa](docs/screenshots/01-anasayfa.jpg)
+
+**Hizmetler**
+![Hizmetler](docs/screenshots/02-hizmetler.jpg)
+
+**Ekip & Son Duyurular**
+![Ekip ve Duyurular](docs/screenshots/03-ekip-duyurular.jpg)
+
+**Admin Giriş**
+![Admin Giriş](docs/screenshots/04-admin-giris.jpg)
+
 ## 🛠️ Kullanılan Teknolojiler
 
 - ASP.NET Core MVC (.NET 10)
