@@ -18,17 +18,37 @@ Tarım temalı bir kurumsal tanıtım sitesi. ASP.NET Core MVC ile geliştirilmi
 
 ## 📸 Ekran Görüntüleri
 
-**Anasayfa**
-![Anasayfa](docs/screenshots/01-anasayfa.jpg)
+### Site
 
-**Hizmetler**
-![Hizmetler](docs/screenshots/02-hizmetler.jpg)
+| Anasayfa | Hakkımızda |
+|---|---|
+| ![Anasayfa](docs/screenshots/site-01-anasayfa.jpg) | ![Hakkımızda](docs/screenshots/site-02-hakkimizda.jpg) |
 
-**Ekip & Son Duyurular**
-![Ekip ve Duyurular](docs/screenshots/03-ekip-duyurular.jpg)
+| Hizmetlerimiz | Ekip Arkadaşlarımız |
+|---|---|
+| ![Hizmetlerimiz](docs/screenshots/site-03-hizmetler.jpg) | ![Ekip](docs/screenshots/site-04-ekip.jpg) |
 
-**Admin Giriş**
-![Admin Giriş](docs/screenshots/04-admin-giris.jpg)
+| Son Duyurular | Bize Ulaşın |
+|---|---|
+| ![Duyurular](docs/screenshots/site-05-duyurular.jpg) | ![İletişim](docs/screenshots/site-06-iletisim.jpg) |
+
+### Admin Panel
+
+| Giriş | Dashboard |
+|---|---|
+| ![Admin Giriş](docs/screenshots/admin-01-giris.jpg) | ![Dashboard](docs/screenshots/admin-02-dashboard.jpg) |
+
+| Duyuru Listesi | Gelen Mesajlar |
+|---|---|
+| ![Duyuru Listesi](docs/screenshots/admin-03-duyurular.jpg) | ![Gelen Mesajlar](docs/screenshots/admin-04-mesajlar.jpg) |
+
+| Hizmet Listesi | Takım Listesi |
+|---|---|
+| ![Hizmet Listesi](docs/screenshots/admin-05-hizmetler.jpg) | ![Takım Listesi](docs/screenshots/admin-06-takim.jpg) |
+
+| Excel Raporları |
+|---|
+| ![Excel Raporları](docs/screenshots/admin-07-raporlar.jpg) |
 
 ## 🛠️ Kullanılan Teknolojiler
 
